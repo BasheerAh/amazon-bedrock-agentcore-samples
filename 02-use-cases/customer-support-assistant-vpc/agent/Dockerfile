@@ -23,7 +23,7 @@ RUN apt-get update && \
 COPY requirements.txt requirements.txt
 
 # Install Python dependencies
-RUN uv pip install --system . && \
+RUN uv pip install --no-cache-dir -r requirements.txt && \
     uv pip install --no-cache-dir aws-opentelemetry-distro>=0.10.1 && \
     uv pip install --no-cache-dir awslabs-postgres-mcp-server
 
